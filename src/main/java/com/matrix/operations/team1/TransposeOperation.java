@@ -10,7 +10,17 @@ public class TransposeOperation {
      */
     public Matrix transpose(Matrix matrix) {
         // Implementation here
+        int newCols = Matrix.getRows();
+        int newRows = Matrix.getColumns();
 
-        return result;
+        MatrixImpl transposedMatrix = new MatrixImpl(newRows, newCols);
+
+        for (int i=0; i<newRows; i++){
+            for (int j = 0; j < newCols; j++){
+                transposedMatrix.set(i,j, Matrix.get(j,i));
+            }
+        }
+
+        return transposedMatrix;
     }
 }
